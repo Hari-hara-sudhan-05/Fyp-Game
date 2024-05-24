@@ -1,0 +1,24 @@
+com.example.fyp.app-jetified-core-ktx-1.9.0-0 C:\Users\harih\.gradle\caches\transforms-3\143fd69d43fd588b4d954b7cc90444f7\transformed\jetified-core-ktx-1.9.0\res
+com.example.fyp.app-core-1.9.0-1 C:\Users\harih\.gradle\caches\transforms-3\5203193235d516688a7097db1e83ec19\transformed\core-1.9.0\res
+com.example.fyp.app-jetified-window-java-1.0.0-beta04-2 C:\Users\harih\.gradle\caches\transforms-3\52327bdbb6080289c26b0e652865ef2f\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.fyp.app-jetified-window-1.0.0-beta04-3 C:\Users\harih\.gradle\caches\transforms-3\78fbd64af62dbdf102ba7c817970421b\transformed\jetified-window-1.0.0-beta04\res
+com.example.fyp.app-browser-1.4.0-4 C:\Users\harih\.gradle\caches\transforms-3\7ca42d0aceb9ebe20b982f6c9a4f599d\transformed\browser-1.4.0\res
+com.example.fyp.app-jetified-play-services-base-18.0.1-5 C:\Users\harih\.gradle\caches\transforms-3\88ae18fc073d92c7d12004ac2835ad41\transformed\jetified-play-services-base-18.0.1\res
+com.example.fyp.app-lifecycle-runtime-2.3.1-6 C:\Users\harih\.gradle\caches\transforms-3\8c4bf68ce294c68c6fb4236ea7d111d8\transformed\lifecycle-runtime-2.3.1\res
+com.example.fyp.app-jetified-annotation-experimental-1.3.0-7 C:\Users\harih\.gradle\caches\transforms-3\95f8b5b5172b6062fb5206c7b371ec48\transformed\jetified-annotation-experimental-1.3.0\res
+com.example.fyp.app-jetified-firebase-common-20.4.3-8 C:\Users\harih\.gradle\caches\transforms-3\b7f7fa43f0338085c58850c387f24a73\transformed\jetified-firebase-common-20.4.3\res
+com.example.fyp.app-jetified-play-services-basement-18.3.0-9 C:\Users\harih\.gradle\caches\transforms-3\eb44e70dfc87ce382182ee0f48770cd6\transformed\jetified-play-services-basement-18.3.0\res
+com.example.fyp.app-debug-10 C:\Users\harih\Desktop\Naan Mudhalvan project\fyp\android\app\src\debug\res
+com.example.fyp.app-main-11 C:\Users\harih\Desktop\Naan Mudhalvan project\fyp\android\app\src\main\res
+com.example.fyp.app-pngs-12 C:\Users\harih\Desktop\Naan Mudhalvan project\fyp\build\app\generated\res\pngs\debug
+com.example.fyp.app-resValues-13 C:\Users\harih\Desktop\Naan Mudhalvan project\fyp\build\app\generated\res\resValues\debug
+com.example.fyp.app-rs-14 C:\Users\harih\Desktop\Naan Mudhalvan project\fyp\build\app\generated\res\rs\debug
+com.example.fyp.app-mergeDebugResources-15 C:\Users\harih\Desktop\Naan Mudhalvan project\fyp\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.fyp.app-mergeDebugResources-16 C:\Users\harih\Desktop\Naan Mudhalvan project\fyp\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.fyp.app-merged_res-17 C:\Users\harih\Desktop\Naan Mudhalvan project\fyp\build\app\intermediates\merged_res\debug
+com.example.fyp.app-packaged_res-18 C:\Users\harih\Desktop\Naan Mudhalvan project\fyp\build\audioplayers_android\intermediates\packaged_res\debug
+com.example.fyp.app-packaged_res-19 C:\Users\harih\Desktop\Naan Mudhalvan project\fyp\build\cloud_firestore\intermediates\packaged_res\debug
+com.example.fyp.app-packaged_res-20 C:\Users\harih\Desktop\Naan Mudhalvan project\fyp\build\firebase_auth\intermediates\packaged_res\debug
+com.example.fyp.app-packaged_res-21 C:\Users\harih\Desktop\Naan Mudhalvan project\fyp\build\firebase_core\intermediates\packaged_res\debug
+com.example.fyp.app-packaged_res-22 C:\Users\harih\Desktop\Naan Mudhalvan project\fyp\build\flutter_tts\intermediates\packaged_res\debug
+com.example.fyp.app-packaged_res-23 C:\Users\harih\Desktop\Naan Mudhalvan project\fyp\build\path_provider_android\intermediates\packaged_res\debug
