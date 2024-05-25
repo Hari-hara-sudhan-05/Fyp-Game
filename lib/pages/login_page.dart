@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fyp/components/text_field.dart';
+import 'package:fyp/pages/forgot_password_page.dart';
 
 class LoginPage extends StatefulWidget {
   final Function()? onTap;
@@ -86,7 +87,9 @@ class _LoginPageState extends State<LoginPage> {
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
-                            const SizedBox(height: 20,),
+                            const SizedBox(
+                              height: 20,
+                            ),
                             const Text(
                               'Welcome Back!',
                               style: TextStyle(
@@ -108,6 +111,17 @@ class _LoginPageState extends State<LoginPage> {
                                 hintText: 'Password',
                                 obscureText: true),
                             //sign in  button
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (ctx) =>
+                                          const ForgotPasswordPage()));
+                                },
+                                child: const Text(
+                                  'Forgot Password?',
+                                  style: TextStyle(
+                                      color: Colors.deepPurpleAccent),
+                                )),
                             const SizedBox(
                               height: 25,
                             ),
@@ -115,8 +129,8 @@ class _LoginPageState extends State<LoginPage> {
                             ElevatedButton(
                               onPressed: login,
                               style: ElevatedButton.styleFrom(
-                                  padding:
-                                      const EdgeInsets.symmetric(horizontal: 90),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 90),
                                   foregroundColor: Colors.white,
                                   backgroundColor:
                                       const Color.fromARGB(255, 255, 215, 0)),
@@ -153,36 +167,6 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-                // MyTextField(controller: emailTextController,
-                //     hintText: 'Email',
-                //     obscureText: false),
-                // const SizedBox(height: 25,),
-                // //password textfield
-                // MyTextField(controller: passwordTextController,
-                //     hintText: 'Password',
-                //     obscureText: true),
-                // //sign in  button
-                // const SizedBox(height: 25,),
-                // MyButton(onTap: login, text: 'Login'),
-                // //register page
-                // const SizedBox(height: 25,),
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.center,
-                //   children: [
-                //     Text('Not registered yet?',
-                //       style: TextStyle(
-                //         color: Colors.grey[700],
-                //       ),),
-                //     GestureDetector(
-                //       onTap: widget.onTap,
-                //       child: const Text('  Register now',
-                //         style: TextStyle(
-                //           fontWeight: FontWeight.bold,
-                //           color: Colors.blue,
-                //         ),),
-                //     )
-                //   ],
-                // )
               ],
             ),
           ),
