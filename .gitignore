@@ -42,3 +42,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+build/app/intermediates/assets/debug/flutter_assets/kernel_blob.bin
+build/9b46fe769667f65dc7b6bbae7e5da17c.cache.dill.track.dill
+build/app/intermediates/merged_native_libs/debug/out/lib/arm64-v8a/libVkLayer_khronos_validation.so
+build/app/outputs/apk/debug/app-debug.apk
