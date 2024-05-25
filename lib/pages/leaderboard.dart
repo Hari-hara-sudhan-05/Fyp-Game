@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fyp/components/drawer.dart';
+import 'package:fyp/pages/forum.dart';
 import 'package:fyp/pages/profile_page.dart';
-
+import '../components/drawer.dart';
 import 'landing_page.dart';
 
 class LeaderboardPage extends StatefulWidget {
-  const LeaderboardPage({Key? key}) : super(key: key);
+  const LeaderboardPage({super.key});
 
   @override
-  _LeaderboardPageState createState() => _LeaderboardPageState();
+  State<LeaderboardPage> createState() => _LeaderboardPageState();
 }
 
 class _LeaderboardPageState extends State<LeaderboardPage> {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   List<UserScore> _leaderboard = [];
+  int selectedPage = 2;
 
   @override
   void initState() {
@@ -48,60 +49,79 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
   }
 
   void goToHomePage() {
-    Navigator.pop(context);
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => HomePage()),
+      MaterialPageRoute(builder: (context) => const HomePage()),
     );
   }
 
   void goToProfilePage() {
-    Navigator.pop(context);
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ProfilePage()),
+      MaterialPageRoute(builder: (context) => const ProfilePage()),
     );
   }
 
-  void goToleaderboard() {
-    Navigator.pop(context);
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => LeaderboardPage()),
-    );
+  void _selectPage(int index) {
+    setState(() {
+      selectedPage = index;
+    });
+    _navigateToPage(index);
+  }
+
+  void _navigateToPage(int index) {
+    switch (index) {
+      case 1:
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (ctc) => const Forum(),
+          ),
+        );
+      case 0:
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (ctc) => const HomePage(),
+          ),
+        );
+        break;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
-        title: RichText(
-            text: TextSpan(
-                text: "Leader",
-                style: TextStyle(
-                    color: Colors.deepPurple,
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.bold),
-                children: [
-              TextSpan(
-                  text: " Board",
-                  style: TextStyle(
-                      color: Colors.pink,
-                      fontSize: 30.0,
-                      fontWeight: FontWeight.bold))
-            ])),
-        backgroundColor: Colors.blueGrey,
-        elevation: 0,
+        backgroundColor: const Color.fromARGB(255, 255, 215, 0), // Change app bar color
+        title: const Text('Leader Board'),
       ),
       drawer: MyDrawer(
         onProfileTap: goToProfilePage,
         onHomeTap: goToHomePage,
-        onLeaderboardTap: goToleaderboard,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: _selectPage,
+        currentIndex: selectedPage,
+        selectedItemColor: const Color.fromARGB(255, 255, 215, 0),
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home page',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.group),
+            label: 'Discussion forum',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.leaderboard),
+            label: 'Leaderboard',
+          ),
+        ],
       ),
       body: _leaderboard.isEmpty
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : ListView.builder(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               itemCount: _leaderboard.length,
               itemBuilder: (context, index) {
                 return Container(
@@ -122,13 +142,13 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                       backgroundColor: Colors.blueGrey,
                       child: Text(
                         '${index + 1}',
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold),
                       ),
                     ),
                     title: Text(
                       _leaderboard[index].name,
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     subtitle: Text(
                         'Tries: ${_leaderboard[index].tries}'), // Display tries instead of best score

@@ -4,12 +4,10 @@ import 'package:fyp/components/my_list_tile.dart';
 class MyDrawer extends StatelessWidget {
   void Function()? onHomeTap;
   void Function()? onProfileTap;
-  void Function()? onLeaderboardTap;
   MyDrawer({
     super.key,
     required this.onHomeTap,
     this.onProfileTap,
-    this.onLeaderboardTap,
   });
 
   @override
@@ -19,7 +17,7 @@ class MyDrawer extends StatelessWidget {
       child: Column(
         children: [
           //header
-          DrawerHeader(
+          const DrawerHeader(
             child: Icon(
               Icons.person,
               color: Colors.white,
@@ -38,11 +36,7 @@ class MyDrawer extends StatelessWidget {
             text: 'P R O F I L E',
             onTap: onProfileTap,
           ),
-          MyListTile(
-            icon: Icons.celebration,
-            text: 'L E A D E R B O A R D',
-            onTap: onLeaderboardTap,
-          ),
+
         ],
       ),
     );

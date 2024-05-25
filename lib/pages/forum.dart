@@ -6,12 +6,13 @@ import 'package:fyp/components/drawer.dart';
 import 'package:fyp/components/forum_post.dart';
 import 'package:fyp/components/text_field.dart';
 import 'package:fyp/pages/landing_page.dart';
+import 'package:fyp/pages/leaderboard.dart';
 import 'package:fyp/pages/profile_page.dart';
 
 import '../helper/helper_methods.dart';
 
 class Forum extends StatefulWidget {
-  const Forum({Key? key}) : super(key: key);
+  const Forum({super.key});
 
   @override
   State<Forum> createState() => _ForumState();
@@ -20,6 +21,8 @@ class Forum extends StatefulWidget {
 class _ForumState extends State<Forum> {
   final currentUser = FirebaseAuth.instance.currentUser;
   final textController = TextEditingController();
+  int selectedPage = 1;
+
 
   void postMessage() {
     if (textController.text.isNotEmpty) {
@@ -36,35 +39,79 @@ class _ForumState extends State<Forum> {
   }
 
   void goToHomePage() {
-    Navigator.pop(context);
-    Navigator.pop(context);
-  }
-
-  void goToProfilePage() {
-    Navigator.pop(context);
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ProfilePage()),
+      MaterialPageRoute(builder: (context) => const HomePage()),
     );
   }
 
+  void goToProfilePage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const ProfilePage()),
+    );
+  }
+
+  void _selectPage(int index) {
+    setState(() {
+      selectedPage = index;
+    });
+    _navigateToPage(index);
+  }
+
+  void _navigateToPage(int index) {
+    switch (index) {
+      case 0:
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (ctc) => const HomePage(),
+          ),
+        );
+      case 2:
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (ctc) => const LeaderboardPage(),
+          ),
+        );
+        break;
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
-      backgroundColor: Colors.grey[300],
       appBar: AppBar(
-        title: Text(
-          'Discussion Forum',
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-        backgroundColor: Colors.grey[700],
+          backgroundColor: const Color.fromARGB(255, 255, 215, 0), // Change app bar color
+          title: const Text('Discussion Forum'),
+
       ),
       drawer: MyDrawer(
         onProfileTap: goToProfilePage,
         onHomeTap: goToHomePage,
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: _selectPage,
+        currentIndex: selectedPage,
+        selectedItemColor: const Color.fromARGB(255, 255, 215, 0),
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home page',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.group),
+            label: 'Discussion forum',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.leaderboard),
+            label: 'Leaderboard',
+          ),
+        ],
+      ),
+      backgroundColor: Colors.grey[300],
+
       body: Center(
         child: Column(
           children: [

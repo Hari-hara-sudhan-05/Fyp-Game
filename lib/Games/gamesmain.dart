@@ -30,21 +30,21 @@ class _GamesListPageState extends State<GamesListPage> {
     );
   }
 
-  void goToProfilePage() {
-    Navigator.pop(context);
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => ProfilePage()),
-    );
-  }
-
-  void goToleaderboard() {
-    Navigator.pop(context);
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => LeaderboardPage()),
-    );
-  }
+  // void goToProfilePage() {
+  //   Navigator.pop(context);
+  //   Navigator.push(
+  //     context,
+  //     MaterialPageRoute(builder: (context) => ProfilePage()),
+  //   );
+  // }
+  //
+  // void goToleaderboard() {
+  //   Navigator.pop(context);
+  //   Navigator.push(
+  //     context,
+  //     MaterialPageRoute(builder: (context) => LeaderboardPage()),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -57,11 +57,11 @@ class _GamesListPageState extends State<GamesListPage> {
         // ),
         // centerTitle: true,
       ),
-      drawer: MyDrawer(
-        onProfileTap: goToProfilePage,
-        onHomeTap: goToHomePage,
-        onLeaderboardTap: goToleaderboard,
-      ),
+      // drawer: MyDrawer(
+      //   onProfileTap: goToProfilePage,
+      //   onHomeTap: goToHomePage,
+      //   onLeaderboardTap: goToleaderboard,
+      // ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [

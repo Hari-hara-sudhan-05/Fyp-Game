@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyTextField extends StatelessWidget {
@@ -16,6 +17,7 @@ class MyTextField extends StatelessWidget {
       obscureText: obscureText,
       decoration: InputDecoration(
         enabledBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(30)),
           borderSide: BorderSide(
             color: Colors.white
           ),
@@ -23,6 +25,7 @@ class MyTextField extends StatelessWidget {
         focusedBorder:const OutlineInputBorder(
           borderSide: BorderSide(
               color: Colors.white
+
           ),
         ),
         fillColor: Colors.grey.shade200,

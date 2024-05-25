@@ -20,9 +20,9 @@ class BubblePopGame extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: TextTheme(
-          headline6: TextStyle(
+          titleLarge: TextStyle(
               color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
-          bodyText2: TextStyle(color: Colors.white70),
+          bodyMedium: TextStyle(color: Colors.white70),
         ),
       ),
       home: GameScreen(),
